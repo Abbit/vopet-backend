@@ -1,0 +1,41 @@
+type Query {
+  answers: [Answer]!
+  questions: [Question]!
+  question(id: ID!): Question
+  subjects: [Subject!]!
+  subject(title: String!): Subject
+}
+
+type Answer {
+  id: ID!
+  body: String!
+  question: Question!
+}
+
+type Question {
+  id: ID!
+  title: String!
+  body: String!
+  subject: Subject!
+  answers: [Answer!]!
+  answersCount: Int!
+}
+
+type Subject {
+  id: ID!
+  title: String!
+  questions: [Question!]!
+}
+
+type Mutation {
+  addAnswer(body: String!, questionId: ID!): AddAnswerMutation
+  createQuestion(body: String!, subjectTitle: String!, title: String!): CreateQuestionMutation
+}
+
+type AddAnswerMutation {
+  answer: Answer
+}
+
+type CreateQuestionMutation {
+  question: Question
+}
