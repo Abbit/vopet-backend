@@ -1,0 +1,22 @@
+[tool.poetry]
+authors = ["Your Name <you@example.com>"]
+description = ""
+name = "vopet-server"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+PyJWT = "^1.7.1"
+django = "^3.1.1"
+django-cors-headers = "^3.4.0"
+django-environ = "^0.4.5"
+graphene-django = "^3.0.0b6"
+psycopg2 = "^2.8.5"
+python = "3.8.3"
+
+[tool.poetry.dev-dependencies]
+black = "^20.8b1"
+flake8 = "^3.8.3"
+
+[build-system]
+build-backend = "poetry.masonry.api"
+requires = ["poetry>=1.0"]
